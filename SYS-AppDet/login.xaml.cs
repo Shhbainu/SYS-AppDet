@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MaterialDesignThemes.Wpf;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace SYS_AppDet
 {
@@ -20,6 +22,8 @@ namespace SYS_AppDet
     /// </summary>
     public partial class login : Window
     {
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Users\zhiel\source\repos\SYS-AppDet\SYS-AppDet\inventorySQL.mdf;Integrated Security=True");
+
         public login()
         {
             InitializeComponent();
@@ -55,6 +59,39 @@ namespace SYS_AppDet
         {
             base.OnMouseLeftButtonDown(e);
             DragMove();
+        }
+
+        private void loginBtn_Click(object sender, RoutedEventArgs e)
+        {
+            int i = 0;
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM registration WHERE username='"+txtUsername.Text+"' and password='"+txtPassword.Password+"'";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            i = Convert.ToInt32(dt.Rows.Count.ToString());
+
+            if (i == 0)
+            {
+                MessageBox.Show("This Username and Password does not match");
+            }
+            else
+            {
+                this.Hide();
+                MainWindow mw1 = new MainWindow();
+                mw1.Show();
+            }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+            con.Open();
         }
     }
 }
