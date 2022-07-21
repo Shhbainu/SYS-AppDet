@@ -37,15 +37,15 @@ namespace SYS_AppDet
         {
             ITheme theme = paletteHelper.GetTheme();
 
-            if (isDarkTheme = theme.GetBaseTheme()== BaseTheme.Dark)
+            if (isDarkTheme = theme.GetBaseTheme()== BaseTheme.Light)
             {
                 isDarkTheme = false;
-                theme.SetBaseTheme(Theme.Light);
+                theme.SetBaseTheme(Theme.Dark);
             }
             else
             {
                 isDarkTheme =true;
-                theme.SetBaseTheme(Theme.Dark);
+                theme.SetBaseTheme(Theme.Light);
             }
             paletteHelper.SetTheme(theme);
         }
@@ -80,8 +80,8 @@ namespace SYS_AppDet
             else
             {
                 this.Hide();
-                MainWindow mw1 = new MainWindow();
-                mw1.Show();
+                dashboard dshb = new dashboard();
+                dshb.Show();
             }
         }
 

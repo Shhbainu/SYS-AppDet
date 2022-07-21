@@ -52,6 +52,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MahApps.Metro.IconPacks.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0c0d510f9915137a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.IconPacks.Material.4.11.0\lib\net47\MahApps.Metro.IconPacks.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro.IconPacks.Material, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0c0d510f9915137a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.IconPacks.Material.4.11.0\lib\net47\MahApps.Metro.IconPacks.Material.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=2.0.1.2556, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.2.0.1\lib\net452\MaterialDesignColors.dll</HintPath>
     </Reference>
@@ -80,6 +86,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="UserControls\Menubutton.xaml.cs">
+      <DependentUpon>Menubutton.xaml</DependentUpon>
+    </Compile>
+    <Page Include="dashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -92,6 +105,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="dashboard.xaml.cs">
+      <DependentUpon>dashboard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="login.xaml.cs">
       <DependentUpon>login.xaml</DependentUpon>
     </Compile>
@@ -99,6 +115,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UserControls\Menubutton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
