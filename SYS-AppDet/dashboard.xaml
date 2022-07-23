@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SYS_AppDet"
+        xmlns:uc="clr-namespace:SYS_AppDet.User_Controls"
         xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d" Height="760" Width="1280" WindowStartupLocation="CenterScreen"
@@ -35,12 +35,12 @@
                             </LinearGradientBrush>
                         </Border.Background>
 
-                        <TextBlock Text="JP" Foreground="#ffffff" FontSize="22" FontWeight="SemiBold" 
+                        <TextBlock Text="IM" Foreground="#ffffff" FontSize="22" FontWeight="SemiBold" 
                                    TextAlignment="Center" VerticalAlignment="Center" Margin="3 0 0 2"/>
                     </Border>
                     <StackPanel Margin="10 0 0 0" VerticalAlignment="Center">
-                        <TextBlock Text="Hoosier Daddy" FontSize="15" Margin="0 0 0 5" Foreground="#c2cfff"/>
-                        <TextBlock Text="Beta 1.3" FontSize="11" Foreground="#7788bf"/>
+                        <TextBlock Text="Inventory Management" FontSize="15" Margin="0 0 0 5" Foreground="#c2cfff"/>
+                        <TextBlock Text="Beta 0.1" FontSize="11" Foreground="#7788bf"/>
 
                     </StackPanel>
                 </StackPanel>
@@ -149,6 +149,10 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
+
+                    <uc:InfoCard Grid.Column="0" Title="Total Views" Number="654,947" Icon="Eye" Background1="#827bff" Background2="#d9b5ff" EllipseBackground1="#b298fd" EllipseBackground2="#e4bbff"/>
+                    <uc:InfoCard Grid.Column="1" Title="Total Order" Number="143,947" Icon="ShoppingCart" Background1="#fd8a87" Background2="#f3ab92" EllipseBackground1="#fdb5a8" EllipseBackground2="#fdb89b"/>
+                    <uc:InfoCard Grid.Column="2" Title="Total Revenue" Number="$54,947" Icon="Coins" Background1="#fc84cb" Background2="#fc8fae" EllipseBackground1="#fc8fae" EllipseBackground2="#ffabe6"/>
 
                 </Grid>
 
