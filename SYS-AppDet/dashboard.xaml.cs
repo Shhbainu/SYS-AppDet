@@ -31,5 +31,10 @@ namespace SYS_AppDet
                 this.DragMove();
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
