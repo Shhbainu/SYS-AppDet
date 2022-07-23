@@ -39,7 +39,7 @@ namespace SYS_AppDet.User_Controls
             set { SetValue(IconProperty, value); }
         }
 
-        public static readonly DependencyProperty IconProperty = DependencyProperty.Register("Icon", typeof(string), typeof(InfoCard));
+        public static readonly DependencyProperty IconProperty = DependencyProperty.Register("Icon", typeof(FontAwesome.Sharp.IconChar), typeof(InfoCard));
 
 
         public Color Background1
@@ -48,7 +48,7 @@ namespace SYS_AppDet.User_Controls
             set { SetValue(Background1Property, value); }
         }
 
-        public static readonly DependencyProperty Background1Property = DependencyProperty.Register("Background1", typeof(string), typeof(InfoCard));
+        public static readonly DependencyProperty Background1Property = DependencyProperty.Register("Background1", typeof(Color), typeof(InfoCard));
 
 
         public Color Background2
@@ -57,7 +57,7 @@ namespace SYS_AppDet.User_Controls
             set { SetValue(Background2Property, value); }
         }
 
-        public static readonly DependencyProperty Background2Property = DependencyProperty.Register("Background2", typeof(string), typeof(InfoCard));
+        public static readonly DependencyProperty Background2Property = DependencyProperty.Register("Background2", typeof(Color), typeof(InfoCard));
 
 
         public Color EllipseBackground1
@@ -66,7 +66,7 @@ namespace SYS_AppDet.User_Controls
             set { SetValue(EllipseBackground1Property, value); }
         }
 
-        public static readonly DependencyProperty EllipseBackground1Property = DependencyProperty.Register("EllipseBackground1", typeof(string), typeof(InfoCard));
+        public static readonly DependencyProperty EllipseBackground1Property = DependencyProperty.Register("EllipseBackground1", typeof(Color), typeof(InfoCard));
 
 
         public Color EllipseBackground2
@@ -75,7 +75,7 @@ namespace SYS_AppDet.User_Controls
             set { SetValue(EllipseBackground2Property, value); }
         }
 
-        public static readonly DependencyProperty EllipseBackground2Property = DependencyProperty.Register("EllipseBackground2", typeof(string), typeof(InfoCard));
+        public static readonly DependencyProperty EllipseBackground2Property = DependencyProperty.Register("EllipseBackground2", typeof(Color), typeof(InfoCard));
 
     }
 }
