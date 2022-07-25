@@ -36,5 +36,35 @@ namespace SYS_AppDet
         {
             Application.Current.Shutdown();
         }
+
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            navFrame.Content = new pageDashboard();
+        }
+
+        private void Product_Click(object sender, RoutedEventArgs e)
+        {
+            navFrame.Content = new pageProduct();
+        }
+
+        private void Category_Click(object sender, RoutedEventArgs e)
+        {
+            navFrame.Content = new pageCategory();
+        }
+
+        private void Orders_Click(object sender, RoutedEventArgs e)
+        {
+            navFrame.Content = new pageOrders();
+        }
+
+        private void Stocks_Click(object sender, RoutedEventArgs e)
+        {
+            navFrame.Content = new pageStocks();
+        }
+
+        private void Ledger_Click(object sender, RoutedEventArgs e)
+        {
+            navFrame.Content = new pageLedger();
+        }
     }
 }

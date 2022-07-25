@@ -14,7 +14,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1030"/>
         </Grid.ColumnDefinitions>
 
         <!--Left Menu-->
@@ -50,59 +50,45 @@
                 <Separator Height="0.8" Margin="20 30" Background="#46558a"/>
 
                 <!--Menu Buttons-->
-                <Button Style="{StaticResource menuButtonActive}">
+                <Button x:Name="Home" Style="{StaticResource menuButton}" Click="Home_Click">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="Home" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="Dashboard" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </Button>
 
-                <Button Style="{StaticResource menuButton}">
+                <Button x:Name="Product" Style="{StaticResource menuButton}" Click="Product_Click">
                     <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="FileSignature" Style="{StaticResource menuButtonIcon}"/>
-                        <TextBlock Text="Listing" Style="{StaticResource menuButtonText}"/>
+                        <fa:IconImage Icon="Boxes" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Products" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </Button>
 
-                <Button Style="{StaticResource menuButton}">
+                <Button x:Name="Category" Style="{StaticResource menuButton}" Click="Category_Click">
                     <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="EnvelopeOpenText" Style="{StaticResource menuButtonIcon}"/>
-                        <TextBlock Text="Message" Style="{StaticResource menuButtonText}"/>
+                        <fa:IconImage Icon="ListAlt" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Categories" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </Button>
 
-                <Button Style="{StaticResource menuButton}">
+                <Button x:Name="Orders" Style="{StaticResource menuButton}" Click="Orders_Click">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="ShoppingCart" Style="{StaticResource menuButtonIcon}"/>
-                        <TextBlock Text="Order" Style="{StaticResource menuButtonText}"/>
+                        <TextBlock Text="Orders" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </Button>
 
-                <Button Style="{StaticResource menuButton}">
+                <Button x:Name="Stocks" Style="{StaticResource menuButton}" Click="Stocks_Click">
                     <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="ChartArea" Style="{StaticResource menuButtonIcon}"/>
-                        <TextBlock Text="Statistics" Style="{StaticResource menuButtonText}"/>
+                        <fa:IconImage Icon="Warehouse" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Stocks" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </Button>
 
-                <Button Style="{StaticResource menuButton}">
+                <Button x:Name="Ledger" Style="{StaticResource menuButton}" Click="Ledger_Click">
                     <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="Coins" Style="{StaticResource menuButtonIcon}"/>
-                        <TextBlock Text="Revenue" Style="{StaticResource menuButtonText}"/>
-                    </StackPanel>
-                </Button>
-
-                <Button Style="{StaticResource menuButton}">
-                    <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="FlagCheckered" Style="{StaticResource menuButtonIcon}"/>
-                        <TextBlock Text="Promotions" Style="{StaticResource menuButtonText}"/>
-                    </StackPanel>
-                </Button>
-
-                <Button Style="{StaticResource menuButton}">
-                    <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="Cog" Style="{StaticResource menuButtonIcon}"/>
-                        <TextBlock Text="Settings" Style="{StaticResource menuButtonText}"/>
+                        <fa:IconImage Icon="EnvelopeOpen" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Ledger" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </Button>
 
@@ -118,15 +104,13 @@
         </Border>
 
         <!--Main Section-->
-        <Border x:Name="navBorder"  Grid.Column="1" CornerRadius="0 10 10 0" MouseDown="Border_MouseDown">
-            <Border.Background>
+        <Frame x:Name="navFrame" Source="/pageDashboard.xaml" Grid.Column="1" MouseDown="Border_MouseDown" NavigationUIVisibility="Hidden">
+            <Frame.Background>
                 <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
                     <GradientStop Color="#41518f" Offset="0"/>
                     <GradientStop Color="#2c386c" Offset="1"/>
                 </LinearGradientBrush>
-            </Border.Background>
-        </Border>
-        
-        
+            </Frame.Background>
+        </Frame>
     </Grid>
 </Window>

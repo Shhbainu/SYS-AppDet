@@ -90,11 +90,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Pages\mainDashboard.xaml.cs">
-      <DependentUpon>mainDashboard.xaml</DependentUpon>
+    <Compile Include="pageCategory.xaml.cs">
+      <DependentUpon>pageCategory.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\mainOrders.xaml.cs">
-      <DependentUpon>mainOrders.xaml</DependentUpon>
+    <Compile Include="pageDashboard.xaml.cs">
+      <DependentUpon>pageDashboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pageLedger.xaml.cs">
+      <DependentUpon>pageLedger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pageOrders.xaml.cs">
+      <DependentUpon>pageOrders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pageProduct.xaml.cs">
+      <DependentUpon>pageProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pageStocks.xaml.cs">
+      <DependentUpon>pageStocks.xaml</DependentUpon>
     </Compile>
     <Compile Include="User Controls\InfoCard.xaml.cs">
       <DependentUpon>InfoCard.xaml</DependentUpon>
@@ -128,11 +140,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\mainDashboard.xaml">
+    <Page Include="pageCategory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\mainOrders.xaml">
+    <Page Include="pageDashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pageLedger.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pageOrders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pageProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pageStocks.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -196,6 +224,7 @@
       <DependentUpon>inventorySQL.mdf</DependentUpon>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

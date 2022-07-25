@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SYS_AppDet.Pages
+namespace SYS_AppDet
 {
     /// <summary>
-    /// Interaction logic for mainOrders.xaml
+    /// Interaction logic for pageStocks.xaml
     /// </summary>
-    public partial class mainOrders : Page
+    public partial class pageStocks : Page
     {
-        public mainOrders()
+        public pageStocks()
         {
             InitializeComponent();
         }
