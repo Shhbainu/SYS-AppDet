@@ -32,7 +32,7 @@ namespace SYS_AppDet
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Logout_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
