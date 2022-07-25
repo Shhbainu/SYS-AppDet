@@ -14,9 +14,7 @@ using System.Windows.Shapes;
 
 namespace SYS_AppDet
 {
-    /// <summary>
-    /// Interaction logic for dashboard.xaml
-    /// </summary>
+
     public partial class dashboard : Window
     {
         public dashboard()
