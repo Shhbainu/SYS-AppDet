@@ -42,7 +42,7 @@
                     </Border>
                     <StackPanel Margin="10 0 0 0" VerticalAlignment="Center">
                         <TextBlock Text="Inventory Management" FontSize="15" Margin="0 0 0 5" Foreground="#c2cfff"/>
-                        <TextBlock Text="Beta 0.1" FontSize="11" Foreground="#7788bf"/>
+                        <TextBlock Text="Beta 1.0" FontSize="11" Foreground="#7788bf"/>
 
                     </StackPanel>
                 </StackPanel>
@@ -92,7 +92,17 @@
                     </StackPanel>
                 </Button>
 
-                <Button x:Name="Logout" Style="{StaticResource menuButton}" Click="Logout_Click">
+                <Button x:Name="User" Style="{StaticResource menuButton}" Click="Ledger_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="UsersCog" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Users" Style="{StaticResource menuButtonText}"/>
+                    </StackPanel>
+                </Button>
+
+
+                <Separator Height="0.8" Margin="20 30" Background="#46558a"/>
+
+                <Button x:Name="Logout" Style="{StaticResource menuButton}" Click="Logout_Click" Margin="0 150 0 0">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="PowerOff" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="Logout" Style="{StaticResource menuButtonText}"/>
