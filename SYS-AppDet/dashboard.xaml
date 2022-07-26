@@ -104,6 +104,7 @@
         </Border>
 
         <!--Main Section-->
+        
         <Frame x:Name="navFrame" Source="/pageDashboard.xaml" Grid.Column="1" MouseDown="Border_MouseDown" NavigationUIVisibility="Hidden">
             <Frame.Background>
                 <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
@@ -112,5 +113,6 @@
                 </LinearGradientBrush>
             </Frame.Background>
         </Frame>
+        
     </Grid>
 </Window>

@@ -19,7 +19,8 @@
         
         <materialDesign:DialogHost CloseOnClickAway="True" x:Name="DialogHost">
             <StackPanel>
-
+                
+                <!--Settings-->
                 <materialDesign:PopupBox HorizontalAlignment="Right" Margin="0 20 20 0" 
                     PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Height="25">
 
@@ -45,7 +46,9 @@
                     </StackPanel>
                     
                 </materialDesign:PopupBox>
-
+                
+                
+                <!--MainSection-->
                 <Image Margin="0 60 0 5" Source="Image\logo.png" Height="100"/>
 
                 <TextBlock Margin="0 25 0 5" HorizontalAlignment="Center" FontSize="28" 
@@ -64,15 +67,15 @@
                              BorderBrush="{DynamicResource MaterialDesignDivider}" 
                              Style="{StaticResource MaterialDesignOutlinedPasswordBox}"/>
                 
-                <Button Margin="0 20 0 0" x:Name="loginBtn" Style="{StaticResource 
+                <Button Margin="0 40 0 0" x:Name="loginBtn" Style="{StaticResource 
                     MaterialDesignFlatMidBgButton}" materialDesign:ShadowAssist.ShadowDepth="Depth0"
                         Height="53" Width="300" materialDesign:ButtonAssist.CornerRadius="10"
                         FontSize="18" Content="LOG IN" Click="loginBtn_Click"/>
 
-                <Button Margin="0 20 0 0" x:Name="signupBtn" Style="{StaticResource 
+                <!--<Button Margin="0 20 0 0" x:Name="signupBtn" Style="{StaticResource 
                     MaterialDesignFlatButton}" materialDesign:ShadowAssist.ShadowDepth="Depth0"
                         Height="53" Width="300" materialDesign:ButtonAssist.CornerRadius="10"
-                        FontSize="18" Content="Create Account"/>
+                        FontSize="18" Content="Create Account"/>-->
 
             </StackPanel>
         </materialDesign:DialogHost>
