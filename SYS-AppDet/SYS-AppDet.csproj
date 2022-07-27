@@ -90,22 +90,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="pageCategory.xaml.cs">
+    <Compile Include="Pages\pageCategory.xaml.cs">
       <DependentUpon>pageCategory.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pageDashboard.xaml.cs">
+    <Compile Include="Pages\pageDashboard.xaml.cs">
       <DependentUpon>pageDashboard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pageLedger.xaml.cs">
+    <Compile Include="Pages\pageLedger.xaml.cs">
       <DependentUpon>pageLedger.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pageOrders.xaml.cs">
+    <Compile Include="Pages\pageOrders.xaml.cs">
       <DependentUpon>pageOrders.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pageProduct.xaml.cs">
+    <Compile Include="Pages\pageProduct.xaml.cs">
       <DependentUpon>pageProduct.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pageStocks.xaml.cs">
+    <Compile Include="Pages\pageStocks.xaml.cs">
       <DependentUpon>pageStocks.xaml</DependentUpon>
     </Compile>
     <Compile Include="User Controls\InfoCard.xaml.cs">
@@ -140,27 +140,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="pageCategory.xaml">
+    <Page Include="Pages\pageCategory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="pageDashboard.xaml">
+    <Page Include="Pages\pageDashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="pageLedger.xaml">
+    <Page Include="Pages\pageLedger.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="pageOrders.xaml">
+    <Page Include="Pages\pageOrders.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="pageProduct.xaml">
+    <Page Include="Pages\pageProduct.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="pageStocks.xaml">
+    <Page Include="Pages\pageStocks.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
