@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SYS_AppDet.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -63,6 +64,11 @@ namespace SYS_AppDet
         private void Ledger_Click(object sender, RoutedEventArgs e)
         {
             navFrame.Content = new pageLedger();
+        }
+
+        private void User_Click(object sender, RoutedEventArgs e)
+        {
+            navFrame.Content = new pageUser();
         }
     }
 }

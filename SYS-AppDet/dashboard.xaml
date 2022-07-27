@@ -92,7 +92,7 @@
                     </StackPanel>
                 </Button>
 
-                <Button x:Name="User" Style="{StaticResource menuButton}" Click="Ledger_Click">
+                <Button x:Name="User" Style="{StaticResource menuButton}" Click="User_Click">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="UsersCog" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="Users" Style="{StaticResource menuButtonText}"/>
