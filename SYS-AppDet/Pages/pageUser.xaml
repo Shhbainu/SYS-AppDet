@@ -22,7 +22,7 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
-                <RowDefinition Height="200"/>
+                <!--<RowDefinition Height="200"/>-->
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -35,51 +35,32 @@
             </StackPanel>-->
 
             <TextBlock Text="IM | Users Panel " FontSize="26" Foreground="#ccd7ff" HorizontalAlignment="Left" Margin="50 35 0 20"/>
+            
+            <DataGrid x:Name="dgUser" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,10,10,354" AlternatingRowBackground="#FF99ADDC" RowBackground="#FFDAE4FF" Background="#FFF9FAFD"/>
+            
+            <Label x:Name="flBtn" Content="Full Name:" HorizontalAlignment="Left" Margin="280,373,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="91"/>
+            <TextBox x:Name="fltxtbox" HorizontalAlignment="Left" Margin="392,374,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14"/>
+            
+            <Label Content="Username:" HorizontalAlignment="Left" Margin="280,419,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="91"/>
+            <TextBox x:Name="usertxtbox" HorizontalAlignment="Left" Margin="392,420,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14"/>
+            
+            <Label Content="Password:" HorizontalAlignment="Left" Margin="280,468,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="86"/>
+            <TextBox x:Name="passtxtbox" HorizontalAlignment="Left" Margin="392,469,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14"/>
+            
+            <Label Content="E-mail:" HorizontalAlignment="Left" Margin="280,518,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="62"/>
+            <TextBox x:Name="emailtxtbox" HorizontalAlignment="Left" Margin="392,519,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14"/>
+            
+            <Label Content="Phone:" HorizontalAlignment="Left" Margin="280,568,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="62"/>
+            <TextBox x:Name="phonetxtbox" HorizontalAlignment="Left" Margin="392,569,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14"/>
+            
+            <Button x:Name="saveBtn" Content="Save" HorizontalAlignment="Left" Margin="669,399,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF96B0FF" Height="30" Width="95" Click="saveBtn_Click"/>
+            <Button x:Name="update" Content="Update" HorizontalAlignment="Left" Margin="669,442,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF5E89FF" Height="30" Width="95"/>
+            <Button x:Name="clearBtn" Content="Clear" HorizontalAlignment="Left" Margin="669,484,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF3467FF" Height="30" Width="95" Click="clearBtn_Click"/>
+            <Button x:Name="deleteBtn" Content="Delete" HorizontalAlignment="Left" Margin="669,527,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF0036DC" Height="30" Width="95"/>
 
-            <!--Info Card-->
-            <Grid Grid.Row="1" Margin="50 20 15 40">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-            </Grid>
-
-            <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="300"/>
-                </Grid.ColumnDefinitions>
-
-                <!--Chart Section-->
 
 
-                <!--Order Section-->
-                <!--<Border Grid.Column="1" CornerRadius="20" Padding="0 25" Background="#243771" Margin="15 0 47 40">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
 
-                        <StackPanel Orientation="Horizontal" Margin="20 0 0 25">
-                            <fa:IconImage Icon="Circle" Style="{StaticResource titleIcon}"/>
-                            <TextBlock Text="Last Orders" Style="{StaticResource titleText}"/>
-                        </StackPanel>
-
-                        --><!--Orders--><!--
-                        <StackPanel Grid.Row="1">
-                            <uc:Order Title="T-Shirt Embrace" Desc="John Doe - 10:30" Icon="Tshirt"/>
-                            <uc:Order Title="Shoes Kamoin" Desc="Karim Penci - 12:00" Icon="ShoePrints"/>
-                            <uc:Order Title="Socks Besaze" Desc="Mari - 14:10" Icon="Socks"/>
-                            <uc:Order Title="T-Shirt Argok" Desc="Ali Qackman - 16:20" Icon="Tshirt"/>
-                            <uc:Order Title="Hat Jackman" Desc="Jack Praide - 18:45" Icon="HardHat"/>
-                        </StackPanel>
-
-                    </Grid>
-                </Border>-->
-            </Grid>
         </Grid>
     </Border>
 </Page>
