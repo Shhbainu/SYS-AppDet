@@ -56,11 +56,6 @@ namespace SYS_AppDet
             navFrame.Content = new pageOrders();
         }
 
-        private void Stocks_Click(object sender, RoutedEventArgs e)
-        {
-            navFrame.Content = new pageStocks();
-        }
-
         private void Ledger_Click(object sender, RoutedEventArgs e)
         {
             navFrame.Content = new pageLedger();
@@ -69,6 +64,11 @@ namespace SYS_AppDet
         private void User_Click(object sender, RoutedEventArgs e)
         {
             navFrame.Content = new pageUser();
+        }
+
+        private void Customers_Click(object sender, RoutedEventArgs e)
+        {
+            navFrame.Content = new pageCustomer();
         }
     }
 }

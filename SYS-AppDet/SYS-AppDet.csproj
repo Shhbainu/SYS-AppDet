@@ -93,6 +93,9 @@
     <Compile Include="Pages\pageCategory.xaml.cs">
       <DependentUpon>pageCategory.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\pageCustomer.xaml.cs">
+      <DependentUpon>pageCustomer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\pageDashboard.xaml.cs">
       <DependentUpon>pageDashboard.xaml</DependentUpon>
     </Compile>
@@ -104,9 +107,6 @@
     </Compile>
     <Compile Include="Pages\pageProduct.xaml.cs">
       <DependentUpon>pageProduct.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\pageStocks.xaml.cs">
-      <DependentUpon>pageStocks.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\pageUser.xaml.cs">
       <DependentUpon>pageUser.xaml</DependentUpon>
@@ -147,6 +147,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\pageCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\pageDashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -160,10 +164,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\pageProduct.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\pageStocks.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

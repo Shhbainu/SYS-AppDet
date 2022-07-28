@@ -57,6 +57,13 @@
                     </StackPanel>
                 </Button>
 
+                <Button x:Name="Customers" Style="{StaticResource menuButton}" Click="Customers_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="UserCheck" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Customers" Style="{StaticResource menuButtonText}"/>
+                    </StackPanel>
+                </Button>
+
                 <Button x:Name="Product" Style="{StaticResource menuButton}" Click="Product_Click">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="Boxes" Style="{StaticResource menuButtonIcon}"/>
@@ -75,13 +82,6 @@
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="ShoppingCart" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="Orders" Style="{StaticResource menuButtonText}"/>
-                    </StackPanel>
-                </Button>
-
-                <Button x:Name="Stocks" Style="{StaticResource menuButton}" Click="Stocks_Click">
-                    <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="Warehouse" Style="{StaticResource menuButtonIcon}"/>
-                        <TextBlock Text="Stocks" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </Button>
 

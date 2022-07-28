@@ -22,7 +22,7 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
-                <RowDefinition Height="200"/>
+                <!--<RowDefinition Height="200"/>-->
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -36,52 +36,43 @@
 
             <TextBlock Text="IM  | Categories Panel " FontSize="26" Foreground="#ccd7ff" HorizontalAlignment="Left" Margin="50 35 0 20"/>
 
-            <!--Info Card-->
-            <Grid Grid.Row="1" Margin="50 20 15 40">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+            <DataGrid x:Name="dgCateg" Grid.Row="1"  Margin="10,10,10,354" AlternatingRowBackground="#FF99ADDC" RowBackground="#FFDAE4FF" Background="#FFF9FAFD" HeadersVisibility="All" RowDetailsVisibilityMode="Visible" IsReadOnly="True" SelectionChanged="dgCateg_SelectionChanged">
+                <!--<DataGrid.Columns>
+                    <DataGridTextColumn Header="ID"/>
+                    <DataGridTextColumn Header="Full Name"/>
+                    <DataGridTextColumn Header="Username"/>
+                    <DataGridTextColumn Header="Password"/>
+                    <DataGridTextColumn Header="Email"/>
+                    <DataGridTextColumn Header="Phone"/>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="Action"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button x:Name="updateBtn" Content="Update" Background="#FF5E89FF" />
+                                    <Button x:Name="deleteBtn" Content="Delete" Background="#FF0036DC" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>-->
+            </DataGrid>
 
-            </Grid>
+            <Label Content="Category ID:" HorizontalAlignment="Left" Margin="885,333,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="89"/>
+            <TextBox x:Name="categIdtxtbox" Text="{Binding categID}" HorizontalAlignment="Left" Margin="973,334,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Background="#DDFBFBFB" FontSize="14" IsEnabled="False" TextAlignment="Right" Height="26"/>
 
-            <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="300"/>
-                </Grid.ColumnDefinitions>
+            <Label Content="Category Name:" HorizontalAlignment="Left" Margin="306,400,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="111"/>
+            <TextBox x:Name="categNametxtbox" Text="{Binding categName}" HorizontalAlignment="Center" Margin="0,401,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14"/>
 
-                <!--Chart Section-->
+            <Button x:Name="saveCategBtn" Content="Save" HorizontalAlignment="Left" Margin="669,399,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF96B0FF" Height="30" Width="95" Click="saveCategBtn_Click" />
+            <Button x:Name="updateCategBtn" Content="Update" HorizontalAlignment="Left" Margin="669,442,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF5E89FF" Height="30" Width="95" Click="updateCategBtn_Click"/>
+            <Button x:Name="clearCategBtn" Content="Clear" HorizontalAlignment="Left" Margin="669,484,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF3467FF" Height="30" Width="95" Click="clearCategBtn_Click"/>
+            <Button x:Name="deleteCategBtn" Content="Delete" HorizontalAlignment="Left" Margin="669,527,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF0036DC" Height="30" Width="95" Click="deleteCategBtn_Click"/>
 
-
-                <!--Order Section-->
-                <!--<Border Grid.Column="1" CornerRadius="20" Padding="0 25" Background="#243771" Margin="15 0 47 40">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-
-                        <StackPanel Orientation="Horizontal" Margin="20 0 0 25">
-                            <fa:IconImage Icon="Circle" Style="{StaticResource titleIcon}"/>
-                            <TextBlock Text="Last Orders" Style="{StaticResource titleText}"/>
-                        </StackPanel>
-
-                        -->
-                <!--Orders-->
-                <!--
-                        <StackPanel Grid.Row="1">
-                            <uc:Order Title="T-Shirt Embrace" Desc="John Doe - 10:30" Icon="Tshirt"/>
-                            <uc:Order Title="Shoes Kamoin" Desc="Karim Penci - 12:00" Icon="ShoePrints"/>
-                            <uc:Order Title="Socks Besaze" Desc="Mari - 14:10" Icon="Socks"/>
-                            <uc:Order Title="T-Shirt Argok" Desc="Ali Qackman - 16:20" Icon="Tshirt"/>
-                            <uc:Order Title="Hat Jackman" Desc="Jack Praide - 18:45" Icon="HardHat"/>
-                        </StackPanel>
-
-                    </Grid>
-                </Border>-->
-            </Grid>
         </Grid>
     </Border>
 </Page>

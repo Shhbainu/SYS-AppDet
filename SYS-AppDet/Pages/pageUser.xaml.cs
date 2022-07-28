@@ -140,7 +140,7 @@ namespace SYS_AppDet.Pages
             }
         }
 
-        private void update_Click(object sender, RoutedEventArgs e)
+        private void updateBtn_Click(object sender, RoutedEventArgs e)
         {
             
             try
@@ -148,7 +148,7 @@ namespace SYS_AppDet.Pages
                 if(MessageBox.Show("Are you sure you want to UPDATE this user?", "Updating Record", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE Usertbl SET fullName='" + fltxtbox.Text + "', username='" + usertxtbox.Text + "', password='" + passtxtbox.Text + "', email='" + emailtxtbox.Text + "', phone='" + phonetxtbox.Text + "' WHERE  userID ='" + uidtxtbox.Text + "' ", con);
+                    SqlCommand cmd = new SqlCommand("UPDATE Usertbl SET fullName='"+fltxtbox.Text+"', username='" + usertxtbox.Text + "', password='" + passtxtbox.Text + "', email='" + emailtxtbox.Text + "', phone='" + phonetxtbox.Text + "' WHERE  userID ='" + uidtxtbox.Text + "' ", con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("User has been successfully updated", "Update", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
