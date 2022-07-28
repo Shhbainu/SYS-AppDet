@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
 
@@ -73,7 +62,7 @@ namespace SYS_AppDet
                 MessageBox.Show("A field is empty", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
-            if (prodcombobox.SelectedItem == null)
+            if (prodcombobox.Text == String.Empty)
             {
                 MessageBox.Show("A field is empty", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
@@ -132,12 +121,15 @@ namespace SYS_AppDet
         {
             try
             {
-                if (MessageBox.Show("Are you sure you want to UPDATE this Product?", "Updating Product", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                if (IsValid())
                 {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE ProductTable SET prod_name='" + prodnametxtbox.Text + "', prod_price='" + prodpricetxtbox.Text + "', prod_qty '"+prodqtytxtbox.Text+"', prod_desc='"+proddesctxtbox.Text+"' WHERE prod_id='"+prodidtxtbox.Text+"' ", con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Product has been successfully updated", "Update", MessageBoxButton.OK, MessageBoxImage.Information);
+                    if (MessageBox.Show("Are you sure you want to UPDATE this Product?", "Updating Product", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("UPDATE ProductTable SET prod_name='" + prodnametxtbox.Text + "', prod_price='" + prodpricetxtbox.Text + "', prod_qty '" + prodqtytxtbox.Text + "', prod_desc='" + proddesctxtbox.Text + "' WHERE prod_id='" + prodidtxtbox.Text + "' ", con);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Product has been successfully updated", "Update", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
                 }
             }
             catch (Exception ex)
@@ -162,12 +154,15 @@ namespace SYS_AppDet
         {
             try
             {
-                if (MessageBox.Show("Are you sure you want to DELETE this Product?", "Deleting Product", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                if (IsValid())
                 {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("DELETE FROM ProductTable WHERE prod_id=" + prodidtxtbox.Text + " ", con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Product has been successfully deleted", "Deleted", MessageBoxButton.OK, MessageBoxImage.Information);
+                    if (MessageBox.Show("Are you sure you want to DELETE this Product?", "Deleting Product", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("DELETE FROM ProductTable WHERE prod_id=" + prodidtxtbox.Text + " ", con);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Product has been successfully deleted", "Deleted", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
                 }
             }
             catch (Exception ex)

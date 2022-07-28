@@ -93,12 +93,15 @@ namespace SYS_AppDet.Pages
         {
             try
             {
-                if(MessageBox.Show("Are you sure you want to UPDATE this Customer?", "Updating Customer", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                if (IsValid())
                 {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE CustomerTable SET cust_name='"+custnametxtbox.Text+"', cust_phone='"+custphonetxtbox.Text+"' WHERE cust_id='"+custidtxtbox.Text+"' ", con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Customer has been successfully updated", "Update", MessageBoxButton.OK, MessageBoxImage.Information);
+                    if (MessageBox.Show("Are you sure you want to UPDATE this Customer?", "Updating Customer", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("UPDATE CustomerTable SET cust_name='" + custnametxtbox.Text + "', cust_phone='" + custphonetxtbox.Text + "' WHERE cust_id='" + custidtxtbox.Text + "' ", con);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Customer has been successfully updated", "Update", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
                 }
             }
             catch(Exception ex)
@@ -122,12 +125,15 @@ namespace SYS_AppDet.Pages
         {
             try
             {
-                if (MessageBox.Show("Are you sure you want to DELETE this Customer?", "Deleting Customer", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                if (IsValid())
                 {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("DELETE FROM CustomerTable WHERE cust_id=" + custidtxtbox.Text + " ", con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Customer has been successfully deleted", "Deleted", MessageBoxButton.OK, MessageBoxImage.Information);
+                    if (MessageBox.Show("Are you sure you want to DELETE this Customer?", "Deleting Customer", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("DELETE FROM CustomerTable WHERE cust_id=" + custidtxtbox.Text + " ", con);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Customer has been successfully deleted", "Deleted", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
                 }
             }
             catch(Exception ex)

@@ -89,12 +89,15 @@ namespace SYS_AppDet
         {
             try
             {
-                if (MessageBox.Show("Are you sure you want to DELETE this Category?", "Deleting Category", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                if (IsValid())
                 {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("DELETE FROM CategoryTbl WHERE categID="+categIdtxtbox.Text+" ", con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Category has been successfully deleted", "Deleted", MessageBoxButton.OK, MessageBoxImage.Information);
+                    if (MessageBox.Show("Are you sure you want to DELETE this Category?", "Deleting Category", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("DELETE FROM CategoryTbl WHERE categID=" + categIdtxtbox.Text + " ", con);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Category has been successfully deleted", "Deleted", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
                 }
             }
             catch(Exception ex)
@@ -113,13 +116,16 @@ namespace SYS_AppDet
         {
             try
             {
-                if (MessageBox.Show("Are you sure you want to UPDATE this Category?", "Updating Category", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                if (IsValid())
                 {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE CategoryTbl SET categName='"+categNametxtbox.Text+"' WHERE categID='"+categIdtxtbox.Text+"' ", con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Category has been successfully updated", "Update", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
+                    if (MessageBox.Show("Are you sure you want to UPDATE this Category?", "Updating Category", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("UPDATE CategoryTbl SET categName='" + categNametxtbox.Text + "' WHERE categID='" + categIdtxtbox.Text + "' ", con);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Category has been successfully updated", "Update", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                } 
             }
             catch (Exception ex)
             {

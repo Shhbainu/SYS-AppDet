@@ -120,12 +120,15 @@ namespace SYS_AppDet.Pages
         {
             try
             {
-                if (MessageBox.Show("Are you sure you want to DELETE this user?", "Deleting Record", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                if (IsValid())
                 {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("DELETE FROM Usertbl WHERE userID= " + uidtxtbox.Text + " ", con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("User has been successfullly deleted", "Deleted", MessageBoxButton.OK, MessageBoxImage.Information);
+                    if (MessageBox.Show("Are you sure you want to DELETE this user?", "Deleting Record", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("DELETE FROM Usertbl WHERE userID= " + uidtxtbox.Text + " ", con);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("User has been successfullly deleted", "Deleted", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
                 }
             }
             catch(Exception ex)
@@ -145,12 +148,15 @@ namespace SYS_AppDet.Pages
             
             try
             {
-                if(MessageBox.Show("Are you sure you want to UPDATE this user?", "Updating Record", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                if (IsValid())
                 {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE Usertbl SET fullName='"+fltxtbox.Text+"', username='" + usertxtbox.Text + "', password='" + passtxtbox.Text + "', email='" + emailtxtbox.Text + "', phone='" + phonetxtbox.Text + "' WHERE  userID ='" + uidtxtbox.Text + "' ", con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("User has been successfully updated", "Update", MessageBoxButton.OK, MessageBoxImage.Information);
+                    if (MessageBox.Show("Are you sure you want to UPDATE this user?", "Updating Record", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("UPDATE Usertbl SET fullName='" + fltxtbox.Text + "', username='" + usertxtbox.Text + "', password='" + passtxtbox.Text + "', email='" + emailtxtbox.Text + "', phone='" + phonetxtbox.Text + "' WHERE  userID ='" + uidtxtbox.Text + "' ", con);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("User has been successfully updated", "Update", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
                 }
             }
             catch (Exception ex)
