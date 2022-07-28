@@ -118,12 +118,15 @@ namespace SYS_AppDet.Pages
                 
         private void deleteBtn_Click(object sender, RoutedEventArgs e)
         {
-            con.Open();
-            SqlCommand cmd = new SqlCommand("DELETE FROM Usertbl WHERE userID= " +uidtxtbox.Text+ " ", con);
             try
             {
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("User has been successfullly deleted", "Deleted", MessageBoxButton.OK, MessageBoxImage.Information);
+                if (MessageBox.Show("Are you sure you want to delete this user?", "Deleting Record", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Usertbl WHERE userID= " + uidtxtbox.Text + " ", con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("User has been successfullly deleted", "Deleted", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
             }
             catch(Exception ex)
             {
