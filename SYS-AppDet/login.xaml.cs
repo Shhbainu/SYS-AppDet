@@ -66,7 +66,7 @@ namespace SYS_AppDet
             int i = 0;
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT * FROM registration WHERE username='" + txtUsername.Text + "' and password='" + txtPassword.Password + "'";
+            cmd.CommandText = "SELECT * FROM Usertbl WHERE username='" + txtUsername.Text + "' and password='" + txtPassword.Password + "'";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);

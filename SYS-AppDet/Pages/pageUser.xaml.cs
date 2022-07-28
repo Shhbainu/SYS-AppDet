@@ -83,6 +83,19 @@ namespace SYS_AppDet.Pages
             Clear();
         }
 
-        
+        private void dgUser_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DataGrid dg = (DataGrid)sender;
+            DataRowView selectedRow = dg.SelectedItem as DataRowView;
+            if (selectedRow != null)
+            {
+                uidtxtbox.Text = selectedRow["userID"].ToString();
+                fltxtbox.Text = selectedRow["fullName"].ToString();
+                usertxtbox.Text = selectedRow["username"].ToString();
+                passtxtbox.Text = selectedRow["password"].ToString();
+                emailtxtbox.Text = selectedRow["email"].ToString();
+                phonetxtbox.Text = selectedRow["phone"].ToString();
+            }
+        }
     }
 }
