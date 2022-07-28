@@ -35,9 +35,48 @@
 
             <TextBlock Text="IM  | Customers Panel " FontSize="26" Foreground="#ccd7ff" HorizontalAlignment="Left" Margin="50 35 0 20"/>
 
-            
+            <DataGrid x:Name="dgCust" Grid.Row="1"  Margin="10,10,10,354" AlternatingRowBackground="#FF99ADDC" RowBackground="#FFDAE4FF" Background="#FFF9FAFD" HeadersVisibility="All" RowDetailsVisibilityMode="Visible" IsReadOnly="True" SelectionChanged="dgCust_SelectionChanged">
+                <!--<DataGrid.Columns>
+                    <DataGridTextColumn Header="ID"/>
+                    <DataGridTextColumn Header="Full Name"/>
+                    <DataGridTextColumn Header="Username"/>
+                    <DataGridTextColumn Header="Password"/>
+                    <DataGridTextColumn Header="Email"/>
+                    <DataGridTextColumn Header="Phone"/>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="Action"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button x:Name="updateBtn" Content="Update" Background="#FF5E89FF" />
+                                    <Button x:Name="deleteBtn" Content="Delete" Background="#FF0036DC" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>-->
+            </DataGrid>
 
-            
+            <Label Content="Customer ID:" HorizontalAlignment="Left" Margin="883,333,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="89"/>
+            <TextBox x:Name="custidtxtbox" Text="{Binding cust_id}" HorizontalAlignment="Left" Margin="973,334,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Background="#DDFBFBFB" FontSize="14" IsEnabled="False" TextAlignment="Right" Height="26"/>
+
+            <Label Content="Customer Name:" HorizontalAlignment="Left" Margin="306,400,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="111"/>
+            <TextBox x:Name="custnametxtbox" Text="{Binding cust_name}" HorizontalAlignment="Center" Margin="0,401,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14"/>
+
+            <Label Content="Phone:" HorizontalAlignment="Left" Margin="364,445,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="56"/>
+            <TextBox x:Name="custphonetxtbox" Text="{Binding cust_phone}" HorizontalAlignment="Center" Margin="0,446,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14"/>
+
+            <Button x:Name="saveCustBtn" Content="Save" HorizontalAlignment="Left" Margin="669,399,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF96B0FF" Height="30" Width="95" Click="saveCustBtn_Click" />
+            <Button x:Name="updateCustBtn" Content="Update" HorizontalAlignment="Left" Margin="669,442,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF5E89FF" Height="30" Width="95" Click="updateCustBtn_Click"/>
+            <Button x:Name="clearCustBtn" Content="Clear" HorizontalAlignment="Left" Margin="669,484,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF3467FF" Height="30" Width="95" Click="clearCustBtn_Click"/>
+            <Button x:Name="deleteCustBtn" Content="Delete" HorizontalAlignment="Left" Margin="669,527,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF0036DC" Height="30" Width="95" Click="deleteCustBtn_Click"/>
+
+
+
         </Grid>
     </Border>
 </Page>
