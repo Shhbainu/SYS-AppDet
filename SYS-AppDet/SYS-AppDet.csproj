@@ -111,9 +111,6 @@
     <Compile Include="Pages\pageUser.xaml.cs">
       <DependentUpon>pageUser.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\pageUsersForms.xaml.cs">
-      <DependentUpon>pageUsersForms.xaml</DependentUpon>
-    </Compile>
     <Compile Include="User Controls\InfoCard.xaml.cs">
       <DependentUpon>InfoCard.xaml</DependentUpon>
     </Compile>
@@ -171,10 +168,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\pageUser.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\pageUsersForms.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -81,9 +81,9 @@
             <TextBox x:Name="phonetxtbox" Text="{Binding phone}" HorizontalAlignment="Left" Margin="392,569,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14"/>
 
             <Button x:Name="saveBtn" Content="Save" HorizontalAlignment="Left" Margin="669,399,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF96B0FF" Height="30" Width="95" Click="saveBtn_Click"/>
-            <Button x:Name="update" Content="Update" HorizontalAlignment="Left" Margin="669,442,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF5E89FF" Height="30" Width="95"/>
+            <Button x:Name="update" Content="Update" HorizontalAlignment="Left" Margin="669,442,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF5E89FF" Height="30" Width="95" Click="update_Click"/>
             <Button x:Name="clearBtn" Content="Clear" HorizontalAlignment="Left" Margin="669,484,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF3467FF" Height="30" Width="95" Click="clearBtn_Click"/>
-            <Button x:Name="deleteBtn" Content="Delete" HorizontalAlignment="Left" Margin="669,527,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF0036DC" Height="30" Width="95"/>
+            <Button x:Name="deleteBtn" Content="Delete" HorizontalAlignment="Left" Margin="669,527,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF0036DC" Height="30" Width="95" Click="deleteBtn_Click"/>
 
         </Grid>
     </Border>
