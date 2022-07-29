@@ -38,6 +38,9 @@
 
             <DataGrid x:Name="dgOrder" Grid.Row="1"  Margin="10,10,10,354" AlternatingRowBackground="#FF99ADDC" RowBackground="#FFDAE4FF" Background="#FFF9FAFD" HeadersVisibility="All" RowDetailsVisibilityMode="Visible" IsReadOnly="True" SelectionChanged="dgOrder_SelectionChanged"/>
 
+            <Label Content="Order ID:" HorizontalAlignment="Left" Margin="896,333,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="78"/>
+            <TextBox x:Name="orderidtxtbox" Text="{Binding order_id}" HorizontalAlignment="Left" Margin="973,334,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Background="#DDFBFBFB" FontSize="14" IsEnabled="False" TextAlignment="Right" Height="26"/>
+
             <Button x:Name="ManageOrderBtn" Content="Manage Orders" HorizontalAlignment="Left" Margin="873,605,0,0" Grid.Row="1" VerticalAlignment="Top" Click="ManageOrderBtn_Click" Background="White" BorderBrush="White" Foreground="#DD000000"/>
 
         </Grid>

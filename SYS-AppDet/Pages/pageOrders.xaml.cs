@@ -51,7 +51,7 @@ namespace SYS_AppDet
         
         private void dgOrder_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            
         }
     }
 }
