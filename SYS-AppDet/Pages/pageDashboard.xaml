@@ -44,7 +44,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <uc:InfoCard Grid.Column="0" Title="Total Views" Number="654,947" Icon="Eye" Background1="#827bff" Background2="#d9b5ff" EllipseBackground1="#b298fd" EllipseBackground2="#e4bbff"/>
+                <uc:InfoCard Grid.Column="0" Title="Total Customer" Number="654,947" Icon="Smile" Background1="#827bff" Background2="#d9b5ff" EllipseBackground1="#b298fd" EllipseBackground2="#e4bbff"/>
                 <uc:InfoCard Grid.Column="1" Title="Total Order" Number="143,947" Icon="ShoppingCart" Background1="#fd8a87" Background2="#f3ab92" EllipseBackground1="#fdb5a8" EllipseBackground2="#fdb89b"/>
                 <uc:InfoCard Grid.Column="2" Title="Total Revenue" Number="$54,947" Icon="Coins" Background1="#fc84cb" Background2="#fc8fae" EllipseBackground1="#fc8fae" EllipseBackground2="#ffabe6"/>
 
@@ -96,7 +96,7 @@
                         </StackPanel>
 
                         <!--Chart-->
-                        <lvc:CartesianChart Grid.Row="1" Margin="45 0 0 25">
+                        <lvc:CartesianChart Grid.Row="1" Margin="45 0 0 25" Loaded="CartesianChart_Loaded">
                             <lvc:CartesianChart.Background>
                                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                                     <GradientStop Color="#26376f" Offset="0"/>
