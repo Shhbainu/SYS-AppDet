@@ -53,8 +53,8 @@
             <Label Content="Quantity:" HorizontalAlignment="Left" Margin="863,547,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="100" HorizontalContentAlignment="Right"/>
             <Label Content="Price:" HorizontalAlignment="Left" Margin="863,494,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="100" HorizontalContentAlignment="Right"/>
             <Label Content="Total:" HorizontalAlignment="Left" Margin="863,602,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="100" HorizontalContentAlignment="Right"/>
-            
-            <xctk:IntegerUpDown Grid.Row="1" x:Name="myUpDownControl" Margin="854,574,37,148" />
+
+            <xctk:IntegerUpDown Grid.Row="1" x:Name="orderquantity" Margin="854,574,37,148" ValueChanged="orderquantity_ValueChanged"/>
 
             <Button x:Name="insertOrderBtn" Content="Insert Order" HorizontalAlignment="Left" Margin="854,690,0,0" Grid.Row="1" VerticalAlignment="Top" Background="White" BorderBrush="White" Foreground="#DD000000" Click="insertOrderBtn_Click"/>
             <Button x:Name="clearOrderBtn" Content="Clear" HorizontalAlignment="Left" Margin="732,690,0,0" Grid.Row="1" VerticalAlignment="Top" Background="White" BorderBrush="White" Foreground="#DD000000" Width="109" Click="clearOrderBtn_Click"/>

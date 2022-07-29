@@ -24,5 +24,10 @@ namespace SYS_AppDet
         {
             InitializeComponent();
         }
+
+        private void InfoCard_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
