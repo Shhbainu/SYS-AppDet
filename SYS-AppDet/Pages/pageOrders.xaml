@@ -22,7 +22,7 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
-                <RowDefinition Height="200"/>
+                <!--<RowDefinition Height="200"/>-->
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -36,50 +36,10 @@
 
             <TextBlock Text="IM  | Orders Panel " FontSize="26" Foreground="#ccd7ff" HorizontalAlignment="Left" Margin="50 35 0 20"/>
 
-            <!--Info Card-->
-            <Grid Grid.Row="1" Margin="50 20 15 40">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+            <DataGrid x:Name="dgOrder" Grid.Row="1"  Margin="10,10,10,354" AlternatingRowBackground="#FF99ADDC" RowBackground="#FFDAE4FF" Background="#FFF9FAFD" HeadersVisibility="All" RowDetailsVisibilityMode="Visible" IsReadOnly="True" SelectionChanged="dgOrder_SelectionChanged"/>
 
-            </Grid>
+            <Button x:Name="ManageOrderBtn" Content="Manage Orders" HorizontalAlignment="Left" Margin="873,605,0,0" Grid.Row="1" VerticalAlignment="Top" Click="ManageOrderBtn_Click" Background="White" BorderBrush="White" Foreground="#DD000000"/>
 
-            <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="300"/>
-                </Grid.ColumnDefinitions>
-
-                <!--Chart Section-->
-
-
-                <!--Order Section-->
-                <Border Grid.Column="1" CornerRadius="20" Padding="0 25" Background="#243771" Margin="15 0 47 40">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-
-                        <StackPanel Orientation="Horizontal" Margin="20 0 0 25">
-                            <fa:IconImage Icon="Circle" Style="{StaticResource titleIcon}"/>
-                            <TextBlock Text="Last Orders" Style="{StaticResource titleText}"/>
-                        </StackPanel>
-
-                        <!--Orders-->
-                        <StackPanel Grid.Row="1">
-                            <uc:Order Title="T-Shirt Embrace" Desc="John Doe - 10:30" Icon="Tshirt"/>
-                            <uc:Order Title="Shoes Kamoin" Desc="Karim Penci - 12:00" Icon="ShoePrints"/>
-                            <uc:Order Title="Socks Besaze" Desc="Mari - 14:10" Icon="Socks"/>
-                            <uc:Order Title="T-Shirt Argok" Desc="Ali Qackman - 16:20" Icon="Tshirt"/>
-                            <uc:Order Title="Hat Jackman" Desc="Jack Praide - 18:45" Icon="HardHat"/>
-                        </StackPanel>
-
-                    </Grid>
-                </Border>
-            </Grid>
         </Grid>
     </Border>
 </Page>

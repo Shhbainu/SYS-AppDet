@@ -191,5 +191,6 @@ namespace SYS_AppDet
                 proddesctxtbox.Text = selectedRow["Description"].ToString();
             }
         }
+
     }
 }
