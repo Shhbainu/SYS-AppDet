@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SYS_AppDet.Pages"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d" Height="750" Width="1000" WindowStartupLocation="CenterScreen"
         WindowStyle="None" ResizeMode="NoResize" Title="Order Form">
 
@@ -31,14 +32,35 @@
                 <Button Content="Year" Style="{StaticResource topMenuButton}"/>
             </StackPanel>-->
 
-            <DataGrid Grid.Row="0" x:Name="dgOrderCust"  Margin="373,17,17,355" AlternatingRowBackground="#FF99ADDC" RowBackground="#FFDAE4FF" Background="#FFF9FAFD" HeadersVisibility="All" RowDetailsVisibilityMode="Visible" IsReadOnly="True" SelectionChanged="dgOrderCust_SelectionChanged" Grid.RowSpan="2" />
-            <DataGrid Grid.Row="0" x:Name="dgOrderProd"  Margin="10,17,632,355" AlternatingRowBackground="#FF99ADDC" RowBackground="#FFDAE4FF" Background="#FFF9FAFD" HeadersVisibility="All" RowDetailsVisibilityMode="Visible" IsReadOnly="True" SelectionChanged="dgOrderProd_SelectionChanged" Grid.RowSpan="2" />
+            <DataGrid Grid.Row="0" x:Name="dgOrderProd"  Margin="373,17,17,355" AlternatingRowBackground="#FF99ADDC" RowBackground="#FFDAE4FF" Background="#FFF9FAFD" HeadersVisibility="All" RowDetailsVisibilityMode="Visible" IsReadOnly="True" SelectionChanged="dgOrderProd_SelectionChanged" Grid.RowSpan="2" />
+            <DataGrid Grid.Row="0" x:Name="dgOrderCust"  Margin="10,17,632,355" AlternatingRowBackground="#FF99ADDC" RowBackground="#FFDAE4FF" Background="#FFF9FAFD" HeadersVisibility="All" RowDetailsVisibilityMode="Visible" IsReadOnly="True" SelectionChanged="dgOrderCust_SelectionChanged" Grid.RowSpan="2" />
             <!--<DataGrid Grid.Row="0" x:Name="dgOrderProd"  Margin="17,17,650,129" AlternatingRowBackground="#FF99ADDC" RowBackground="#FFDAE4FF" Background="#FFF9FAFD" HeadersVisibility="All" RowDetailsVisibilityMode="Visible" IsReadOnly="True" SelectionChanged="dgOrderProd_SelectionChanged"/>-->
 
-            <Button x:Name="orderInsertBtn" Content="Insert Order" HorizontalAlignment="Left" Margin="854,469,0,0" Grid.Row="1" VerticalAlignment="Top" Background="White" BorderBrush="White" Foreground="#DD000000"/>
-            <Button x:Name="clearOrderBtn" Content="Clear" HorizontalAlignment="Left" Margin="854,422,0,0" Grid.Row="1" VerticalAlignment="Top" Background="White" BorderBrush="White" Foreground="#DD000000" Width="109"/>
-            <Button x:Name="exitOrderBtn" Content="Exit" HorizontalAlignment="Left" Margin="854,691,0,0" Grid.Row="1" VerticalAlignment="Top" Background="White" BorderBrush="White" Foreground="#DD000000" Width="109" Click="exitOrderBtn_Click"/>
+            <Label Content="[ CUSTOMER ]" HorizontalAlignment="Left" Margin="10,450,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontWeight="SemiBold" FontSize="20" Width="137"/>
+            <Label Content="Customer ID" HorizontalAlignment="Left" Margin="18,496,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="137"/>
+            <Label Content="Customer Name " HorizontalAlignment="Left" Margin="19,562,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="137"/>
+            <TextBox x:Name="ordercustidtxtbox" Text="{Binding cust_id}" HorizontalAlignment="Left" Margin="20,524,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14" IsReadOnly="True"/>
+            <TextBox x:Name="ordercustnametxtbox" Text="{Binding cust_name}" HorizontalAlignment="Left" Margin="20,588,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14" IsReadOnly="True"/>
 
+            <Label Content="[ PRODUCT ]" HorizontalAlignment="Left" Margin="373,450,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontWeight="SemiBold" FontSize="20" Width="137"/>
+            <Label Content="Product ID" HorizontalAlignment="Left" Margin="373,495,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="137"/>
+            <Label Content="Product Name " HorizontalAlignment="Left" Margin="373,560,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="137"/>
+            <TextBox x:Name="orderprodidtxtbox" Text="{Binding prod_id}" HorizontalAlignment="Left" Margin="373,524,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14" IsReadOnly="True"/>
+            <TextBox x:Name="orderprodnametxtbox" Text="{Binding prod_name}" HorizontalAlignment="Left" Margin="373,588,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14" IsReadOnly="True"/>
+            
+            <DatePicker x:Name="orderproddate" HorizontalAlignment="Left" Margin="373,663,0,0" VerticalAlignment="Top" Height="27" Width="186" Grid.Row="1" Background="White" Foreground="White" BorderBrush="White"/>
+
+            <Label Content="Quantity:" HorizontalAlignment="Left" Margin="863,547,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="100" HorizontalContentAlignment="Right"/>
+            <Label Content="Price:" HorizontalAlignment="Left" Margin="863,494,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="100" HorizontalContentAlignment="Right"/>
+            <Label Content="Total:" HorizontalAlignment="Left" Margin="863,602,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="100" HorizontalContentAlignment="Right"/>
+            
+            <xctk:IntegerUpDown Grid.Row="1" x:Name="myUpDownControl" Margin="854,574,37,148" />
+
+            <Button x:Name="insertOrderBtn" Content="Insert Order" HorizontalAlignment="Left" Margin="854,690,0,0" Grid.Row="1" VerticalAlignment="Top" Background="White" BorderBrush="White" Foreground="#DD000000" Click="insertOrderBtn_Click"/>
+            <Button x:Name="clearOrderBtn" Content="Clear" HorizontalAlignment="Left" Margin="732,690,0,0" Grid.Row="1" VerticalAlignment="Top" Background="White" BorderBrush="White" Foreground="#DD000000" Width="109" Click="clearOrderBtn_Click"/>
+            <Button x:Name="exitOrderBtn" Content="Exit" HorizontalAlignment="Left" Margin="854,418,0,0" Grid.Row="1" VerticalAlignment="Top" Background="White" BorderBrush="White" Foreground="#DD000000" Width="109" Click="exitOrderBtn_Click"/>
+            <TextBox x:Name="orderprodpricetxtbox" Text="{Binding prod_price }" HorizontalAlignment="Left" Margin="854,521,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" Background="#DDFBFBFB" FontSize="14" IsReadOnly="True"/>
+            <TextBox x:Name="orderprodtotaltxtbox" Text="{Binding total_amount}" HorizontalAlignment="Left" Margin="854,627,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" Background="#DDFBFBFB" FontSize="14" IsReadOnly="True"/>
 
 
         </Grid>
