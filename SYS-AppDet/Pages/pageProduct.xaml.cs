@@ -46,7 +46,7 @@ namespace SYS_AppDet
 
         public void LoadProd()
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM ProductTable", con);
+            SqlCommand cmd = new SqlCommand("SELECT prod_id AS 'Product ID', prod_name AS 'Product', categ_name AS 'Category', prod_qty AS 'Quantity', prod_price AS 'Price', prod_desc AS 'Description' FROM ProductTable", con);
             DataTable dt = new DataTable();
             con.Open();
             SqlDataReader sdr = cmd.ExecuteReader();
@@ -84,7 +84,6 @@ namespace SYS_AppDet
             }
             return true;
         }
-
 
         private void saveprodBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -126,7 +125,7 @@ namespace SYS_AppDet
                     if (MessageBox.Show("Are you sure you want to UPDATE this Product?", "Updating Product", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                     {
                         con.Open();
-                        SqlCommand cmd = new SqlCommand("UPDATE ProductTable SET prod_name='" + prodnametxtbox.Text + "', prod_price='" + prodpricetxtbox.Text + "', prod_qty '" + prodqtytxtbox.Text + "', prod_desc='" + proddesctxtbox.Text + "' WHERE prod_id='" + prodidtxtbox.Text + "' ", con);
+                        SqlCommand cmd = new SqlCommand("UPDATE ProductTable SET prod_name='"+prodnametxtbox.Text+"', categ_name='"+prodcombobox.Text+"', prod_price='"+prodpricetxtbox.Text+"', prod_qty='"+prodqtytxtbox.Text+"', prod_desc='"+proddesctxtbox.Text+"' WHERE prod_id='"+prodidtxtbox.Text+"' ", con);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Product has been successfully updated", "Update", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
@@ -184,12 +183,12 @@ namespace SYS_AppDet
             DataRowView selectedRow = dg.SelectedItem as DataRowView;
             if (selectedRow != null)
             {
-                prodidtxtbox.Text = selectedRow["prod_id"].ToString();
-                prodnametxtbox.Text = selectedRow["prod_name"].ToString();
-                prodpricetxtbox.Text = selectedRow["prod_price"].ToString();
-                prodqtytxtbox.Text = selectedRow["prod_qty"].ToString();
-                proddesctxtbox.Text = selectedRow["prod_desc"].ToString();
-                prodcombobox.Text = selectedRow["categ_name"].ToString();
+                prodidtxtbox.Text = selectedRow["Product ID"].ToString();
+                prodnametxtbox.Text = selectedRow["Product"].ToString();
+                prodcombobox.Text = selectedRow["Category"].ToString();
+                prodqtytxtbox.Text = selectedRow["Quantity"].ToString();
+                prodpricetxtbox.Text = selectedRow["Price"].ToString();
+                proddesctxtbox.Text = selectedRow["Description"].ToString();
             }
         }
     }

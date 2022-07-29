@@ -39,7 +39,7 @@ namespace SYS_AppDet.Pages
 
         public void LoadCust()
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM CustomerTable", con);
+            SqlCommand cmd = new SqlCommand("SELECT cust_id AS 'Customer ID', cust_name AS 'Customer Name', cust_phone AS 'Phone' FROM CustomerTable", con);
             DataTable dt = new DataTable();
             con.Open();
             SqlDataReader sdr = cmd.ExecuteReader();
@@ -154,9 +154,9 @@ namespace SYS_AppDet.Pages
             DataRowView selectedRow = dg.SelectedItem as DataRowView;
             if(selectedRow != null)
             {
-                custidtxtbox.Text = selectedRow["cust_id"].ToString();
-                custnametxtbox.Text = selectedRow["cust_name"].ToString();
-                custphonetxtbox.Text = selectedRow["cust_phone"].ToString();
+                custidtxtbox.Text = selectedRow["Customer ID"].ToString();
+                custnametxtbox.Text = selectedRow["Customer Name"].ToString();
+                custphonetxtbox.Text = selectedRow["Phone"].ToString();
             }
         }
     }

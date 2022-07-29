@@ -27,7 +27,7 @@ namespace SYS_AppDet
 
         public void LoadCateg()
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM CategoryTable", con);
+            SqlCommand cmd = new SqlCommand("SELECT categ_id AS 'Category ID', categ_name AS 'Category' FROM CategoryTable", con);
             DataTable dt = new DataTable();
             con.Open();
             SqlDataReader sdr = cmd.ExecuteReader();
@@ -136,8 +136,8 @@ namespace SYS_AppDet
             DataRowView selectedRow = dg.SelectedItem as DataRowView;
             if (selectedRow != null)
             {
-                categidtxtbox.Text = selectedRow["categ_id"].ToString();
-                categnametxtbox.Text = selectedRow["categ_name"].ToString();
+                categidtxtbox.Text = selectedRow["Category ID"].ToString();
+                categnametxtbox.Text = selectedRow["Category"].ToString();
             }
         }
     }

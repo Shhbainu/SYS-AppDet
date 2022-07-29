@@ -43,7 +43,7 @@ namespace SYS_AppDet.Pages
 
         public void LoadUser()
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM UserTable", con);
+            SqlCommand cmd = new SqlCommand("SELECT user_id AS 'User ID', user_name AS 'Name', user_username AS 'Username', user_password AS 'Password', user_email AS 'Email', user_phone AS 'Phone' FROM UserTable", con);
             DataTable dt = new DataTable();
             con.Open();
             SqlDataReader sdr = cmd.ExecuteReader();
@@ -177,12 +177,12 @@ namespace SYS_AppDet.Pages
             DataRowView selectedRow = dg.SelectedItem as DataRowView;
             if (selectedRow != null)
             {
-                uidtxtbox.Text = selectedRow["user_id"].ToString();
-                nametxtbox.Text = selectedRow["user_name"].ToString();
-                usernametxtbox.Text = selectedRow["user_username"].ToString();
-                passtxtbox.Text = selectedRow["user_password"].ToString();
-                emailtxtbox.Text = selectedRow["user_email"].ToString();
-                phonetxtbox.Text = selectedRow["user_phone"].ToString();
+                uidtxtbox.Text = selectedRow["User ID"].ToString();
+                nametxtbox.Text = selectedRow["Name"].ToString();
+                usernametxtbox.Text = selectedRow["Username"].ToString();
+                passtxtbox.Text = selectedRow["Password"].ToString();
+                emailtxtbox.Text = selectedRow["Email"].ToString();
+                phonetxtbox.Text = selectedRow["Phone"].ToString();
             }
         }
 
