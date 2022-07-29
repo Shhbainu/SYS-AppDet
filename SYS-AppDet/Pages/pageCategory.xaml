@@ -63,10 +63,10 @@
             </DataGrid>
 
             <Label Content="Category ID:" HorizontalAlignment="Left" Margin="885,333,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="89"/>
-            <TextBox x:Name="categIdtxtbox" Text="{Binding categID}" HorizontalAlignment="Left" Margin="973,334,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Background="#DDFBFBFB" FontSize="14" IsEnabled="False" TextAlignment="Right" Height="26"/>
+            <TextBox x:Name="categidtxtbox" Text="{Binding categ_id}" HorizontalAlignment="Left" Margin="973,334,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Background="#DDFBFBFB" FontSize="14" IsEnabled="False" TextAlignment="Right" Height="26"/>
 
             <Label Content="Category Name:" HorizontalAlignment="Left" Margin="306,400,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="111"/>
-            <TextBox x:Name="categNametxtbox" Text="{Binding categName}" HorizontalAlignment="Center" Margin="0,401,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14"/>
+            <TextBox x:Name="categnametxtbox" Text="{Binding categ_name}" HorizontalAlignment="Center" Margin="0,401,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14"/>
 
             <Button x:Name="saveCategBtn" Content="Save" HorizontalAlignment="Left" Margin="669,399,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF96B0FF" Height="30" Width="95" Click="saveCategBtn_Click" />
             <Button x:Name="updateCategBtn" Content="Update" HorizontalAlignment="Left" Margin="669,442,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF5E89FF" Height="30" Width="95" Click="updateCategBtn_Click"/>

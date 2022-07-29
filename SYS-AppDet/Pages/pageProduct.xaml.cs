@@ -23,7 +23,7 @@ namespace SYS_AppDet
         public void LoadProdCateg()
         {
             prodcombobox.Items.Clear();
-            SqlCommand cmd = new SqlCommand("SELECT categName FROM CategoryTbl", con);
+            SqlCommand cmd = new SqlCommand("SELECT categ_name FROM CategoryTable", con);
             con.Open();
             SqlDataReader sdr = cmd.ExecuteReader();
             while (sdr.Read())

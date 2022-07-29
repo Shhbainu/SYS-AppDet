@@ -63,22 +63,22 @@
             </DataGrid>
 
             <Label x:Name="userId" Content="user ID:" HorizontalAlignment="Left" Margin="914,333,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="60"/>
-            <TextBox x:Name="uidtxtbox" Text="{Binding userID}" HorizontalAlignment="Left" Margin="973,334,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Background="#DDFBFBFB" FontSize="14" IsEnabled="False" TextAlignment="Right" Height="26"/>
+            <TextBox x:Name="uidtxtbox" Text="{Binding user_id}" HorizontalAlignment="Left" Margin="973,334,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Background="#DDFBFBFB" FontSize="14" IsEnabled="False" TextAlignment="Right" Height="26"/>
 
             <Label Content="Full Name:" HorizontalAlignment="Left" Margin="280,373,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="91"/>
-            <TextBox x:Name="fltxtbox" Text="{Binding fullName}" HorizontalAlignment="Left" Margin="392,374,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14"/>
+            <TextBox x:Name="nametxtbox" Text="{Binding user_name}" HorizontalAlignment="Left" Margin="392,374,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14"/>
 
             <Label Content="Username:" HorizontalAlignment="Left" Margin="280,419,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="91"/>
-            <TextBox x:Name="usertxtbox" Text="{Binding username}" HorizontalAlignment="Left" Margin="392,420,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14"/>
+            <TextBox x:Name="usernametxtbox" Text="{Binding user_username}" HorizontalAlignment="Left" Margin="392,420,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14"/>
 
             <Label Content="Password:" HorizontalAlignment="Left" Margin="280,468,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="86"/>
-            <TextBox x:Name="passtxtbox" Text="{Binding password}" HorizontalAlignment="Left" Margin="392,469,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14"/>
+            <TextBox x:Name="passtxtbox" Text="{Binding user_password}" HorizontalAlignment="Left" Margin="392,469,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14"/>
 
             <Label Content="E-mail:" HorizontalAlignment="Left" Margin="280,518,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="62"/>
-            <TextBox x:Name="emailtxtbox" Text="{Binding email}" HorizontalAlignment="Left" Margin="392,519,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14"/>
+            <TextBox x:Name="emailtxtbox" Text="{Binding user_email}" HorizontalAlignment="Left" Margin="392,519,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14"/>
 
             <Label Content="Phone:" HorizontalAlignment="Left" Margin="280,568,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="62"/>
-            <TextBox x:Name="phonetxtbox" Text="{Binding phone}" HorizontalAlignment="Left" Margin="392,569,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14"/>
+            <TextBox x:Name="phonetxtbox" Text="{Binding user_phone}" HorizontalAlignment="Left" Margin="392,569,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14"/>
 
             <Button x:Name="saveBtn" Content="Save" HorizontalAlignment="Left" Margin="669,399,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF96B0FF" Height="30" Width="95" Click="saveBtn_Click"/>
             <Button x:Name="updateBtn" Content="Update" HorizontalAlignment="Left" Margin="669,442,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#FF5E89FF" Height="30" Width="95" Click="updateBtn_Click"/>

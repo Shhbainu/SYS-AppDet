@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
 
@@ -32,13 +21,13 @@ namespace SYS_AppDet
 
         public void ClearCateg()
         {
-            categIdtxtbox.Clear();
-            categNametxtbox.Clear();
+            categidtxtbox.Clear();
+            categnametxtbox.Clear();
         }
 
         public void LoadCateg()
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM CategoryTbl", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM CategoryTable", con);
             DataTable dt = new DataTable();
             con.Open();
             SqlDataReader sdr = cmd.ExecuteReader();
@@ -46,9 +35,10 @@ namespace SYS_AppDet
             con.Close();
             dgCateg.ItemsSource = dt.DefaultView;
         }
+
         public bool IsValid()
         {
-            if(categNametxtbox.Text == String.Empty)
+            if(categnametxtbox.Text == String.Empty)
             {
                 MessageBox.Show("A field is empty", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
@@ -64,8 +54,8 @@ namespace SYS_AppDet
                 {
                     if (MessageBox.Show("Are you sure you want to SAVE this category?", "Saving Category", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                     {
-                        SqlCommand cmd = new SqlCommand("INSERT INTO CategoryTbl(categName)VALUES(@categName)", con);
-                        cmd.Parameters.AddWithValue("@categName", categNametxtbox.Text);
+                        SqlCommand cmd = new SqlCommand("INSERT INTO CategoryTable (categ_name)VALUES(@categ_name)", con);
+                        cmd.Parameters.AddWithValue("@categ_name", categnametxtbox.Text);
                         con.Open();
                         cmd.ExecuteNonQuery();
                         con.Close();
@@ -80,6 +70,7 @@ namespace SYS_AppDet
                 MessageBox.Show(ex.Message);
             }
         }
+
         private void clearCategBtn_Click(object sender, RoutedEventArgs e)
         {
             ClearCateg();
@@ -94,7 +85,7 @@ namespace SYS_AppDet
                     if (MessageBox.Show("Are you sure you want to DELETE this Category?", "Deleting Category", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                     {
                         con.Open();
-                        SqlCommand cmd = new SqlCommand("DELETE FROM CategoryTbl WHERE categID=" + categIdtxtbox.Text + " ", con);
+                        SqlCommand cmd = new SqlCommand("DELETE FROM CategoryTable WHERE categ_id=" + categidtxtbox.Text + " ", con);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Category has been successfully deleted", "Deleted", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
@@ -121,7 +112,7 @@ namespace SYS_AppDet
                     if (MessageBox.Show("Are you sure you want to UPDATE this Category?", "Updating Category", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                     {
                         con.Open();
-                        SqlCommand cmd = new SqlCommand("UPDATE CategoryTbl SET categName='" + categNametxtbox.Text + "' WHERE categID='" + categIdtxtbox.Text + "' ", con);
+                        SqlCommand cmd = new SqlCommand("UPDATE CategoryTable SET categ_name='" + categnametxtbox.Text + "' WHERE categ_id='" + categidtxtbox.Text + "' ", con);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Category has been successfully updated", "Update", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
@@ -145,8 +136,8 @@ namespace SYS_AppDet
             DataRowView selectedRow = dg.SelectedItem as DataRowView;
             if (selectedRow != null)
             {
-                categIdtxtbox.Text = selectedRow["categID"].ToString();
-                categNametxtbox.Text = selectedRow["categName"].ToString();
+                categidtxtbox.Text = selectedRow["categ_id"].ToString();
+                categnametxtbox.Text = selectedRow["categ_name"].ToString();
             }
         }
     }

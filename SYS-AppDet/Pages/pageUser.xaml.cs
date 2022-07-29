@@ -34,8 +34,8 @@ namespace SYS_AppDet.Pages
         public void ClearUser()
         {
             uidtxtbox.Clear();
-            fltxtbox.Clear();
-            usertxtbox.Clear();
+            nametxtbox.Clear();
+            usernametxtbox.Clear();
             passtxtbox.Clear();
             emailtxtbox.Clear();
             phonetxtbox.Clear();
@@ -43,7 +43,7 @@ namespace SYS_AppDet.Pages
 
         public void LoadUser()
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Usertbl", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM UserTable", con);
             DataTable dt = new DataTable();
             con.Open();
             SqlDataReader sdr = cmd.ExecuteReader();
@@ -54,12 +54,12 @@ namespace SYS_AppDet.Pages
 
         public bool IsValid()
         {
-            if (fltxtbox.Text == String.Empty)
+            if (nametxtbox.Text == String.Empty)
             {
                 MessageBox.Show("A field is empty", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
-            if (usertxtbox.Text == String.Empty)
+            if (usernametxtbox.Text == String.Empty)
             {
                 MessageBox.Show("A field is empty", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
@@ -90,12 +90,12 @@ namespace SYS_AppDet.Pages
                 {
                     if (MessageBox.Show("Are you sure you want to SAVE this user?", "Saving Record", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                     {
-                        SqlCommand cmd = new SqlCommand("INSERT INTO Usertbl(fullName,username,password,email,phone)VALUES(@fullName,@username,@password,@email,@phone)", con);
-                        cmd.Parameters.AddWithValue("@fullName", fltxtbox.Text);
-                        cmd.Parameters.AddWithValue("@username", usertxtbox.Text);
-                        cmd.Parameters.AddWithValue("@password", passtxtbox.Text);
-                        cmd.Parameters.AddWithValue("@email", emailtxtbox.Text);
-                        cmd.Parameters.AddWithValue("@phone", phonetxtbox.Text);
+                        SqlCommand cmd = new SqlCommand("INSERT INTO UserTable(user_name,user_username,user_password,user_email,user_phone)VALUES(@user_name,@user_username,@user_password,@user_email,@user_phone)", con);
+                        cmd.Parameters.AddWithValue("@user_name", nametxtbox.Text);
+                        cmd.Parameters.AddWithValue("@user_username", usernametxtbox.Text);
+                        cmd.Parameters.AddWithValue("@user_password", passtxtbox.Text);
+                        cmd.Parameters.AddWithValue("@user_email", emailtxtbox.Text);
+                        cmd.Parameters.AddWithValue("@user_phone", phonetxtbox.Text);
                         con.Open();
                         cmd.ExecuteNonQuery();
                         con.Close();
@@ -125,7 +125,7 @@ namespace SYS_AppDet.Pages
                     if (MessageBox.Show("Are you sure you want to DELETE this user?", "Deleting Record", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                     {
                         con.Open();
-                        SqlCommand cmd = new SqlCommand("DELETE FROM Usertbl WHERE userID= " + uidtxtbox.Text + " ", con);
+                        SqlCommand cmd = new SqlCommand("DELETE FROM UserTable WHERE user_id= " + uidtxtbox.Text + " ", con);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("User has been successfullly deleted", "Deleted", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
@@ -153,7 +153,7 @@ namespace SYS_AppDet.Pages
                     if (MessageBox.Show("Are you sure you want to UPDATE this user?", "Updating Record", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                     {
                         con.Open();
-                        SqlCommand cmd = new SqlCommand("UPDATE Usertbl SET fullName='" + fltxtbox.Text + "', username='" + usertxtbox.Text + "', password='" + passtxtbox.Text + "', email='" + emailtxtbox.Text + "', phone='" + phonetxtbox.Text + "' WHERE  userID ='" + uidtxtbox.Text + "' ", con);
+                        SqlCommand cmd = new SqlCommand("UPDATE UserTable SET user_name='" + nametxtbox.Text + "', user_username='" + usernametxtbox.Text + "', user_password='" + passtxtbox.Text + "', user_email='" + emailtxtbox.Text + "', user_phone='" + phonetxtbox.Text + "' WHERE  user_id ='" + uidtxtbox.Text + "' ", con);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("User has been successfully updated", "Update", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
@@ -177,12 +177,12 @@ namespace SYS_AppDet.Pages
             DataRowView selectedRow = dg.SelectedItem as DataRowView;
             if (selectedRow != null)
             {
-                uidtxtbox.Text = selectedRow["userID"].ToString();
-                fltxtbox.Text = selectedRow["fullName"].ToString();
-                usertxtbox.Text = selectedRow["username"].ToString();
-                passtxtbox.Text = selectedRow["password"].ToString();
-                emailtxtbox.Text = selectedRow["email"].ToString();
-                phonetxtbox.Text = selectedRow["phone"].ToString();
+                uidtxtbox.Text = selectedRow["user_id"].ToString();
+                nametxtbox.Text = selectedRow["user_name"].ToString();
+                usernametxtbox.Text = selectedRow["user_username"].ToString();
+                passtxtbox.Text = selectedRow["user_password"].ToString();
+                emailtxtbox.Text = selectedRow["user_email"].ToString();
+                phonetxtbox.Text = selectedRow["user_phone"].ToString();
             }
         }
 
