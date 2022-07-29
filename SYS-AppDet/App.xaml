@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:SYS_AppDet"
              xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
-             StartupUri="login.xaml">
+             StartupUri="dashboard.xaml">
 
     <Application.Resources>
         <ResourceDictionary>

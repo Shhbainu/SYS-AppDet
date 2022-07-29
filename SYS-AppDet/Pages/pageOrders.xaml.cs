@@ -23,18 +23,19 @@ namespace SYS_AppDet
     /// </summary>
     public partial class pageOrders : Page
     {
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Users\zhiel\source\repos\SYS-AppDet\SYS-AppDet\inventorySQL.mdf;Integrated Security=True");
+
         public pageOrders()
         {
             InitializeComponent();
             LoadOrder();
         }
 
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Admin\Source\Repos\Shhbainu\SYS-AppDet\SYS-AppDet\inventorySQL.mdf;Integrated Security=True");
-
         private void ManageOrderBtn_Click(object sender, RoutedEventArgs e)
         {
             ManageOrders mngorder = new ManageOrders();
             mngorder.Show();
+            ClearOrder();
         }
 
         public void LoadOrder()
@@ -48,10 +49,47 @@ namespace SYS_AppDet
             dgOrder.ItemsSource = dt.DefaultView;
         }
 
+        public void ClearOrder()
+        {
+            orderidtxtbox.Clear();
+        }
         
+        private void deleteOrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Are you sure you want to DELETE this Order?", "Deleting Order", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("DELETE FROM OrderTable WHERE order_id=" + orderidtxtbox.Text + " ", con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Customer has been successfully deleted", "Deleted", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Not Deleted" + ex.Message);
+            }
+            finally
+            {
+                con.Close();
+                LoadOrder();
+            }
+        }
+
         private void dgOrder_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            DataGrid dg = (DataGrid)sender;
+            DataRowView selectedRow = dg.SelectedItem as DataRowView;
+            if (selectedRow != null)
+            {
+                orderidtxtbox.Text = selectedRow["Order ID"].ToString();
+            }
+        }
+
+        private void clearOrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ClearOrder();
         }
     }
 }
