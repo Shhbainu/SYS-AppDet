@@ -84,10 +84,10 @@
                     </StackPanel>
                 </Button>
 
-                <Button x:Name="Ledger" Style="{StaticResource menuButton}" Click="Ledger_Click">
+                <Button x:Name="StatusUpdate" Style="{StaticResource menuButton}" Click="StatusUpdate_Click">
                     <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="EnvelopeOpen" Style="{StaticResource menuButtonIcon}"/>
-                        <TextBlock Text="Ledger" Style="{StaticResource menuButtonText}"/>
+                        <fa:IconImage Icon="Check" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Status Update" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </Button>
 

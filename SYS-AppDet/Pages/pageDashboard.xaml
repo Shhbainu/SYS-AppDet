@@ -100,7 +100,7 @@
                             <lvc:CartesianChart.Background>
                                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                                     <GradientStop Color="#26376f" Offset="0"/>
-                                    <GradientStop Color="#6a6ae4" Offset="1.5"/>
+                                    <GradientStop Color="#6a6ae4" Offset="0"/>
                                 </LinearGradientBrush>
                             </lvc:CartesianChart.Background>
 
@@ -125,11 +125,10 @@
                             </lvc:CartesianChart.AxisY>
 
                             <lvc:CartesianChart.Series>
-                                <lvc:LineSeries Stroke="#ada4fd" StrokeThickness="2" PointGeometrySize="0" Values="20000,17000,30000,15000,50000,30000,20000">
+                                <lvc:LineSeries Stroke="#ada4fd" PointGeometrySize="0" Values="">
                                     <lvc:LineSeries.Fill>
                                         <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                                            <GradientStop Color="#b397e2" Offset="0.4"/>
-                                            <GradientStop Color="#6a6ae4" Offset="1.2"/>
+
                                         </LinearGradientBrush>
                                     </lvc:LineSeries.Fill>
                                 </lvc:LineSeries>
@@ -157,11 +156,6 @@
 
                         <!--Orders-->
                         <StackPanel Grid.Row="1">
-                            <uc:Order Title="T-Shirt Embrace" Desc="John Doe - 10:30" Icon="Tshirt"/>
-                            <uc:Order Title="Shoes Kamoin" Desc="Karim Penci - 12:00" Icon="ShoePrints"/>
-                            <uc:Order Title="Socks Besaze" Desc="Mari - 14:10" Icon="Socks"/>
-                            <uc:Order Title="T-Shirt Argok" Desc="Ali Qackman - 16:20" Icon="Tshirt"/>
-                            <uc:Order Title="Hat Jackman" Desc="Jack Praide - 18:45" Icon="HardHat"/>
                         </StackPanel>
 
                     </Grid>

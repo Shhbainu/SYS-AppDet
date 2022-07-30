@@ -63,7 +63,7 @@ namespace SYS_AppDet
                     con.Open();
                     SqlCommand cmd = new SqlCommand("DELETE FROM OrderTable WHERE order_id=" + orderidtxtbox.Text + " ", con);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Customer has been successfully deleted", "Deleted", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Order has been successfully deleted", "Deleted", MessageBoxButton.OK, MessageBoxImage.Information);
 
                     //prod_qty will increase base on order_qty if the order will be deleted
                     if (true)

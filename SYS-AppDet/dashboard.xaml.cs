@@ -33,7 +33,10 @@ namespace SYS_AppDet
 
         private void Logout_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            this.Close();
+            login log = new login();
+            log.Show();
+           
         }
 
         private void Home_Click(object sender, RoutedEventArgs e)
@@ -56,9 +59,9 @@ namespace SYS_AppDet
             navFrame.Content = new pageOrders();
         }
 
-        private void Ledger_Click(object sender, RoutedEventArgs e)
+        private void StatusUpdate_Click(object sender, RoutedEventArgs e)
         {
-            navFrame.Content = new pageLedger();
+            navFrame.Content = new pageStatusUpdate();
         }
 
         private void User_Click(object sender, RoutedEventArgs e)

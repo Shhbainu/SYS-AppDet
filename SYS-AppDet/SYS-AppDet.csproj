@@ -117,8 +117,8 @@
     <Compile Include="Pages\pageDashboard.xaml.cs">
       <DependentUpon>pageDashboard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\pageLedger.xaml.cs">
-      <DependentUpon>pageLedger.xaml</DependentUpon>
+    <Compile Include="Pages\pageStatusUpdate.xaml.cs">
+      <DependentUpon>pageStatusUpdate.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\pageOrders.xaml.cs">
       <DependentUpon>pageOrders.xaml</DependentUpon>
@@ -177,7 +177,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\pageLedger.xaml">
+    <Page Include="Pages\pageStatusUpdate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
