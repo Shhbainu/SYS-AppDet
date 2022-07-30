@@ -40,7 +40,7 @@ namespace SYS_AppDet
 
         public void LoadOrder()
         {
-            SqlCommand cmd = new SqlCommand("SELECT order_id AS 'Order ID', order_date AS 'Order Date', prod_name AS 'Product Name', cust_name AS 'Customer Name', order_qty AS 'Order Quantity', prod_price AS 'Price', total_amount AS 'Total Amount' FROM OrderTable", con);
+            SqlCommand cmd = new SqlCommand("SELECT order_id AS 'Order ID', order_date AS 'Order Date', prod_name AS 'Product Name', cust_name AS 'Customer Name', payment AS 'Payment', status AS 'Status', order_qty AS 'Order Quantity', prod_price AS 'Price', total_amount AS 'Total Amount' FROM OrderTable", con);
             DataTable dt = new DataTable();
             con.Open();
             SqlDataReader sdr = cmd.ExecuteReader();

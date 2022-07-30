@@ -47,7 +47,7 @@
             <Label Content="Product Name " HorizontalAlignment="Left" Margin="373,560,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="137"/>
             <TextBox x:Name="orderprodidtxtbox" Text="{Binding prod_id}" HorizontalAlignment="Left" Margin="373,524,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14" IsReadOnly="True"/>
             <TextBox x:Name="orderprodnametxtbox" Text="{Binding prod_name}" HorizontalAlignment="Left" Margin="373,588,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14" IsReadOnly="True"/>
-            
+
             <DatePicker x:Name="orderproddate" HorizontalAlignment="Left" Margin="373,663,0,0" VerticalAlignment="Top" Height="27" Width="186" Grid.Row="1" Background="White" Foreground="White" BorderBrush="White" SelectedDateFormat="Short"/>
 
             <Label Content="Quantity:" HorizontalAlignment="Left" Margin="863,547,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="100" HorizontalContentAlignment="Right"/>
@@ -61,6 +61,12 @@
             <Button x:Name="exitOrderBtn" Content="Exit" HorizontalAlignment="Left" Margin="854,418,0,0" Grid.Row="1" VerticalAlignment="Top" Background="White" BorderBrush="White" Foreground="#DD000000" Width="109" Click="exitOrderBtn_Click"/>
             <TextBox x:Name="orderprodpricetxtbox" Text="{Binding prod_price }" HorizontalAlignment="Left" Margin="854,521,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" Background="#DDFBFBFB" FontSize="14" IsReadOnly="True"/>
             <TextBox x:Name="orderprodtotaltxtbox" Text="{Binding total_amount}" HorizontalAlignment="Left" Margin="854,627,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" Background="#DDFBFBFB" FontSize="14" IsReadOnly="True"/>
+
+            <Label Content="[ PAYMENT ]" HorizontalAlignment="Left" Margin="600,450,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontWeight="SemiBold" FontSize="20" Width="137"/>
+            <Label Content="Payment Type" HorizontalAlignment="Left" Margin="600,494,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="136"/>
+            <TextBox x:Name="paymenttypetxtbox" Text="{Binding payment}" HorizontalAlignment="Left" Margin="600,524,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14"/>
+            <Label Content="Status" HorizontalAlignment="Left" Margin="600,562,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="136"/>
+            <TextBox x:Name="statustxtbox" Text="{Binding status}" HorizontalAlignment="Left" Margin="600,589,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14"/>
 
 
         </Grid>

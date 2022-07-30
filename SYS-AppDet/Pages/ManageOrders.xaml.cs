@@ -70,6 +70,9 @@ namespace SYS_AppDet.Pages
             orderprodpricetxtbox.Clear();
             orderquantity.Value = 1;
             orderprodtotaltxtbox.Clear();
+
+            paymenttypetxtbox.Clear();
+            statustxtbox.Clear();
             
         }
 
@@ -168,13 +171,15 @@ namespace SYS_AppDet.Pages
                 {
                     if (MessageBox.Show("Are you sure you want to SAVE this order?", "Saving Orders", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                     {
-                        SqlCommand cmd = new SqlCommand("INSERT INTO OrderTable (order_date, prod_id, prod_name, cust_id, cust_name, order_qty, prod_price, total_amount)VALUES(@order_date, @prod_id, @prod_name, @cust_id, @cust_name, @order_qty, @prod_price, @total_amount)", con);
+                        SqlCommand cmd = new SqlCommand("INSERT INTO OrderTable (order_date, prod_id, prod_name, cust_id, cust_name, order_qty, prod_price, payment, status, total_amount)VALUES(@order_date, @prod_id, @prod_name, @cust_id, @cust_name, @order_qty, @prod_price, @payment, @status, @total_amount)", con);
                         cmd.Parameters.AddWithValue("@order_date", orderproddate.Text);
                         cmd.Parameters.AddWithValue("@prod_id", orderprodidtxtbox.Text);
                         cmd.Parameters.AddWithValue("@prod_name", orderprodnametxtbox.Text);
                         cmd.Parameters.AddWithValue("@cust_id", ordercustidtxtbox.Text);
                         cmd.Parameters.AddWithValue("@cust_name", ordercustnametxtbox.Text);
                         cmd.Parameters.AddWithValue("@order_qty", orderquantity.Text);
+                        cmd.Parameters.AddWithValue("@payment", paymenttypetxtbox.Text);
+                        cmd.Parameters.AddWithValue("@status", statustxtbox.Text);
                         cmd.Parameters.AddWithValue("@prod_price", Convert.ToDecimal(orderprodpricetxtbox.Text));
                         cmd.Parameters.AddWithValue("@total_amount", Convert.ToDecimal(orderprodtotaltxtbox.Text));
                         con.Open();
