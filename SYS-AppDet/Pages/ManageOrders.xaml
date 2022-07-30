@@ -48,7 +48,7 @@
             <TextBox x:Name="orderprodidtxtbox" Text="{Binding prod_id}" HorizontalAlignment="Left" Margin="373,524,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14" IsReadOnly="True"/>
             <TextBox x:Name="orderprodnametxtbox" Text="{Binding prod_name}" HorizontalAlignment="Left" Margin="373,588,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Background="#DDFBFBFB" FontSize="14" IsReadOnly="True"/>
             
-            <DatePicker x:Name="orderproddate" HorizontalAlignment="Left" Margin="373,663,0,0" VerticalAlignment="Top" Height="27" Width="186" Grid.Row="1" Background="White" Foreground="White" BorderBrush="White"/>
+            <DatePicker x:Name="orderproddate" HorizontalAlignment="Left" Margin="373,663,0,0" VerticalAlignment="Top" Height="27" Width="186" Grid.Row="1" Background="White" Foreground="White" BorderBrush="White" SelectedDateFormat="Short"/>
 
             <Label Content="Quantity:" HorizontalAlignment="Left" Margin="863,547,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="100" HorizontalContentAlignment="Right"/>
             <Label Content="Price:" HorizontalAlignment="Left" Margin="863,494,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#DDFBFBFB" FontSize="14" Width="100" HorizontalContentAlignment="Right"/>

@@ -114,7 +114,7 @@ namespace SYS_AppDet.Pages
             }
             if (Convert.ToInt32(orderquantity.Text) > 0)
             {
-                decimal total = (Convert.ToDecimal(orderprodpricetxtbox.Text)) * Convert.ToInt32(orderquantity.Text);
+                decimal total = (Convert.ToDecimal(orderprodpricetxtbox.Text)) * Convert.ToInt16(orderquantity.Text);
                 orderprodtotaltxtbox.Text = total.ToString();
             }
         }
