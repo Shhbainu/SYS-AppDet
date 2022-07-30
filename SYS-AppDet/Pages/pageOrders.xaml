@@ -44,6 +44,9 @@
             <Button x:Name="ManageOrderBtn" Content="Manage Orders" HorizontalAlignment="Left" Margin="873,605,0,0" Grid.Row="1" VerticalAlignment="Top" Click="ManageOrderBtn_Click" Background="White" BorderBrush="White" Foreground="#DD000000"/>
             <Button x:Name="deleteOrderBtn" Content="Delete" HorizontalAlignment="Left" Margin="908,390,0,0" Grid.Row="1" VerticalAlignment="Top" Background="White" BorderBrush="White" Foreground="#DD000000" Height="30" Width="95" Click="deleteOrderBtn_Click"/>
             <Button x:Name="clearOrderBtn" Content="Clear" HorizontalAlignment="Left" Margin="908,429,0,0" Grid.Row="1" VerticalAlignment="Top" Background="White" BorderBrush="White" Foreground="#DD000000" Height="30" Width="95" Click="clearOrderBtn_Click"/>
+            <TextBox x:Name="orderprodnametxtbox" Text="{Binding prod_id}" HorizontalAlignment="Left" Margin="963,478,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Background="#DDFBFBFB" FontSize="14" IsEnabled="False" TextAlignment="Right" Height="26" FontWeight="Bold" Visibility="Hidden"/>
+            <TextBox x:Name="orderquantitytxtbox" Text="{Binding order_qty}" HorizontalAlignment="Left" Margin="963,509,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Background="#DDFBFBFB" FontSize="14" IsEnabled="False" TextAlignment="Right" Height="26" FontWeight="Bold" Visibility="Hidden"/>
+
 
         </Grid>
     </Border>

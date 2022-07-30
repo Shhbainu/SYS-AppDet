@@ -64,6 +64,15 @@ namespace SYS_AppDet
                     SqlCommand cmd = new SqlCommand("DELETE FROM OrderTable WHERE order_id=" + orderidtxtbox.Text + " ", con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Customer has been successfully deleted", "Deleted", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    //prod_qty will increase base on order_qty if the order will be deleted
+                    if (true)
+                    {
+
+                        SqlCommand cmd2 = new SqlCommand("UPDATE ProductTable SET prod_qty = (prod_qty + @order_qty ) WHERE prod_name = '"  + orderprodnametxtbox.Text + "'", con);
+                        cmd2.Parameters.AddWithValue("@order_qty", Convert.ToInt16(orderquantitytxtbox.Text));
+                        cmd2.ExecuteNonQuery();
+                    }
                 }
             }
             catch (Exception ex)
@@ -84,6 +93,8 @@ namespace SYS_AppDet
             if (selectedRow != null)
             {
                 orderidtxtbox.Text = selectedRow["Order ID"].ToString();
+                orderprodnametxtbox.Text = selectedRow["Product Name"].ToString();
+                orderquantitytxtbox.Text = selectedRow["Order Quantity"].ToString();
             }
         }
 

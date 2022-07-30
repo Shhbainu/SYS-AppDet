@@ -88,6 +88,7 @@ namespace SYS_AppDet
                         SqlCommand cmd = new SqlCommand("DELETE FROM CategoryTable WHERE categ_id=" + categidtxtbox.Text + " ", con);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Category has been successfully deleted", "Deleted", MessageBoxButton.OK, MessageBoxImage.Information);
+
                     }
                 }
             }
